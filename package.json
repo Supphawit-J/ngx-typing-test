@@ -1,5 +1,5 @@
 {
-  "name": "@supphawit/ngx-typing-test",
+  "name": "@supphawit-j/ngx-typing-test",
   "version": "0.0.1",
   "author": "Oliver Schmidt",
   "peerDependencies": {
@@ -14,6 +14,6 @@
     "@ideajeng:registry": "https://npm.pkg.github.com"
   },
   "repository": {
-    "url": "git://github.com/Supphawit-J/ngx-speed-test.git"
+    "url": "git://github.com/Supphawit-J/ngx-typing-test.git"
   }
 }
