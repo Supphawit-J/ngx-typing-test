@@ -1,6 +1,6 @@
 {
   "name": "@supphawit-j/ngx-typing-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Oliver Schmidt",
   "peerDependencies": {
     "@angular/common": "^13.3.0",
