@@ -6,7 +6,7 @@ and [Angular Material](https://v13.material.angular.io/).
 ## Install
 
 ```
-npm i @supphawit/ngx-typing-test
+npm i @supphawit-j/ngx-typing-test
 ```
 
 ## API reference
