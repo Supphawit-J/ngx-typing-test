@@ -1,0 +1,19 @@
+{
+  "name": "@supphawit/ngx-typing-test",
+  "version": "0.0.1",
+  "author": "Oliver Schmidt",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0",
+    "@angular/material": "^13.3.8"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "@ideajeng:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "url": "git://github.com/Supphawit-J/ngx-speed-test.git"
+  }
+}

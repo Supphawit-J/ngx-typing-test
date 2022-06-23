@@ -1,0 +1,56 @@
+<div class="ngxComponent">
+
+
+  <div class="flex-container" *ngIf="!isFinished">
+    <div class="wordContainer">
+      <span *ngFor="let object of writtenWords" class="word"
+            [ngClass]="object.isCorrect ? 'correct' : 'wrong'">
+        {{object.word}}
+      </span>
+      <span
+        *ngFor="let word of remainingWords | slice: 0:(configuration.maxWordsInRow * 2) - writtenWords.length; first as isFirst; index as Index"
+        class="word"
+        [ngClass]="isFirst ? (word.includes(wordInput.trim()) ? 'currentWord' : 'currentWordError') : ''">
+                {{word}}
+        <span *ngIf="writtenWords.length + Index == (configuration.maxWordsInRow - 1)"><br/></span>
+      </span>
+    </div>
+    <div class="inputContainer">
+      <input id="ngTypeTestInput" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+             [(ngModel)]="wordInput" [disabled]="isFinished" (keyup)="observeInput($event)">
+
+      <button mat-stroked-button color="secondary" aria-label="Time remaining">
+        {{remainingTime}} seconds
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="!inProgress && isFinished" class="resultContainer">
+    <div class="wpm" matTooltip="words per minute">{{result.wordsSubmitted}} WPM</div>
+
+    <table style="width: 100%">
+      <tr>
+        <td>Chars typed:</td>
+        <td>{{result.charsTyped}}</td>
+      </tr>
+      <tr>
+        <td>Accuracy:</td>
+        <td>{{result.wordsCorrect / result.wordsSubmitted | percent: '2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>Correct words:</td>
+        <td class="correct">{{result.wordsCorrect}}</td>
+      </tr>
+      <tr>
+        <td>Wrong words:</td>
+        <td class="wrong">{{result.wordsSubmitted - result.wordsCorrect}}</td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 0.5rem" *ngIf="configuration.attempts !== 0">
+      <button mat-icon-button color="primary"  aria-label="restart" (click)="restart()">
+        <mat-icon>restart_alt</mat-icon>
+      </button> <span style="font-size: 0.8rem" *ngIf="configuration.attempts > 0">{{configuration.attempts}} more attempt/s</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.ngxComponent {
+  font-family: arial, serif;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+.currentWord {
+  background-color: #dddddd;
+}
+.currentWordError {
+  background-color: #ff7575;
+}
+
+.word {
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.2rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.wordContainer {
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: 1px solid #8eb6d8;
+  border-radius: 10px;
+}
+
+.inputContainer {
+  padding: 1rem;
+  margin: auto;
+  text-align: center;
+}
+
+.resultContainer {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #8eb6d8;
+  border-radius: 10px;
+}
+
+.wpm {
+  font-size: 1.5rem;
+  color: green;
+}
+
+#ngTypeTestInput {
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  border: 1px solid;
+  border-radius: 0.2rem;
+  margin-bottom: 0.2rem;
+}
