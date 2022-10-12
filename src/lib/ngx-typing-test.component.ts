@@ -136,7 +136,7 @@ export class NgxTypingTestComponent implements OnInit {
     }
     this.remainingWords.splice(0, 1);
 
-    if (this.writtenWords.length == 10) {
+    if (this.writtenWords.length == this.configuration.maxWordsInRow) {
       this.writtenWords = [];
     }
 

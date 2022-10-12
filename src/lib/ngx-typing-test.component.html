@@ -3,17 +3,19 @@
 
   <div class="flex-container" *ngIf="!isFinished">
     <div class="wordContainer">
-      <span *ngFor="let object of writtenWords" class="word"
+      <span *ngFor="let object of writtenWords; index as Index" class="word"
             [ngClass]="object.isCorrect ? 'correct' : 'wrong'">
         {{object.word}}
+        <span *ngIf="Index+1 == configuration.maxWordsInRow"><br></span>
       </span>
       <span
         *ngFor="let word of remainingWords | slice: 0:(configuration.maxWordsInRow * 2) - writtenWords.length; first as isFirst; index as Index"
         class="word"
         [ngClass]="isFirst ? (word.includes(wordInput.trim()) ? 'currentWord' : 'currentWordError') : ''">
                 {{word}}
-        <span *ngIf="writtenWords.length + Index == (configuration.maxWordsInRow - 1)"><br/></span>
+        <span *ngIf="writtenWords.length + Index == configuration.maxWordsInRow-1"><br/></span>
       </span>
+
     </div>
     <div class="inputContainer">
       <input id="ngTypeTestInput" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
@@ -48,9 +50,11 @@
     </table>
 
     <div style="margin-top: 0.5rem" *ngIf="configuration.attempts !== 0">
-      <button mat-icon-button color="primary"  aria-label="restart" (click)="restart()">
+      <button mat-icon-button color="primary" aria-label="restart" (click)="restart()">
         <mat-icon>restart_alt</mat-icon>
-      </button> <span style="font-size: 0.8rem" *ngIf="configuration.attempts > 0">{{configuration.attempts}} more attempt/s</span>
+      </button>
+      <span style="font-size: 0.8rem" *ngIf="configuration.attempts > 0">{{configuration.attempts}}
+        more attempt/s</span>
     </div>
   </div>
 </div>
